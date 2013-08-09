@@ -16,10 +16,16 @@ import android.util.Log;
  */
 public class Player {
 	
+    /**
+     * the number of states the player can be in
+     */
 	public enum status {
 		AIR, GROUND, HANGING, CLIMBING, CROUCHING
 	}
 	
+    /**
+     * holds the player's state
+     */
 	public status mStatus;
 
 	/**
@@ -276,6 +282,7 @@ public class Player {
 		Point point = new Point(mX, mY);
 		
 		// load all of the bitmaps
+        // TODO: use spritesheet - less hard coding and repeated code
 		loadStandingSprites();
 		loadRunningSprites();
 		loadJumpingSprites();
@@ -589,7 +596,6 @@ public class Player {
 		Bullet bullet = null;
 		// configure the bullet's location and velocity
 
-		//TODO: Fix hard coding bullet position
 		if ( diagonal ) {
 			if ( mLeftLast == true ) {
 				bullet = new Bullet(R.drawable.bullet_left_diagonal_up, mContext, 0, 0);
@@ -744,6 +750,9 @@ public class Player {
 		}
 	}
 	
+    /**
+     * set next sprite in the running series
+     */
 	public void nextRunningSprite() {
 		mAnimationIndex++;
 		
@@ -779,6 +788,9 @@ public class Player {
 		}
 	}
 
+    /**
+     * set next sprite in the jumping series
+     */
 	public void nextJumpingSprite() {
 		mAnimationIndex++;
 		
@@ -822,6 +834,9 @@ public class Player {
 		}
 	}
 	
+    /**
+     * set next sprite in the hanging series
+     */
 	public void nextHangingSprite() {
 		if ( mLeftLast == true )
 			mCurSprite = mHangingSpritesLeft.get( 0 );
@@ -1087,6 +1102,9 @@ public class Player {
 		mLeftLast = leftLast;
 	}
 
+    /**
+     * set the current sprite
+     */
 	public void setSprite() {
 		if ( mStatus == status.AIR ) {
 			nextJumpingSprite();
@@ -1115,12 +1133,18 @@ public class Player {
 		mNumJumps = jumps;
 	}
 
+    /**
+     * tell the player to crouch
+     */
 	public void crouch() {
 		if ( getStatus() == status.GROUND ) {
 			setStatus( status.CROUCHING );
 		}
 	}
 	
+    /**
+     * tell the player to stand
+     */
 	public void stand() {
 		setStatus( status.GROUND );
 	}

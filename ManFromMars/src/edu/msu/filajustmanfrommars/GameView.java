@@ -92,6 +92,9 @@ public class GameView extends View {
 		mGame.onResume();
 	}
 
+    /**
+     * listener for when the user swipes
+     */
     class MyGestureListener extends GestureDetector.SimpleOnGestureListener {
 
         @Override

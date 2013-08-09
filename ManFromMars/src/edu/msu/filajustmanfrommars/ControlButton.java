@@ -26,7 +26,6 @@ public class ControlButton extends Sprite {
 	public ControlButton(int image, int imagePressed, Context context, int yOffset) {
 		// note: no x offset needed
 		super(image, context, yOffset, 0);
-		// TODO Auto-generated constructor stub
 		
 		mPressedBitmap = BitmapFactory.decodeResource(context.getResources(), imagePressed);
 	    mWidth = mPressedBitmap.getWidth();

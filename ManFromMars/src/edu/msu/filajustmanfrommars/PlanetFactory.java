@@ -41,6 +41,13 @@ public class PlanetFactory {
 		addPurplePlatform( 25, 2, 0, 550, planet, context );
 	}
 	
+    /**
+     * create a purple platform 
+     * @param xTiles the number of horizontal tiles
+     * @param yTiles the number of vertical tiles
+     * @param x the x location of the platform
+     * @param y the y location
+     */
 	public void addPurplePlatform( int xTiles, int yTiles, int x, int y,
 			Planet planet, Context context) {
 		

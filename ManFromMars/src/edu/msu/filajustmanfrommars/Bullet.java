@@ -41,6 +41,9 @@ public class Bullet extends Sprite {
 		mVelY = velY;
 	}
 	
+    /**
+     * move the bullet
+     */
 	public void move() {
 		super.setLocation( super.getX() + mVelX, super.getY() + mVelY );
 	}

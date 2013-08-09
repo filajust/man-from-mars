@@ -34,6 +34,10 @@ public class Planet {
 		mPlanet = name;
 	}
 
+    /**
+     * add a platform to the planet
+     * @param platform the platform being added
+     */
 	public void addPlatform(Platform platform) {
 		mPlatforms.add(platform);
 	}

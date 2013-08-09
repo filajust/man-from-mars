@@ -415,7 +415,7 @@ public class Game {
 			
 			// the actual game loop
 			while (running) {
-				// current time
+				// current time - used to determine how long to sleep
 				long now = System.nanoTime();
 				// number of ticks since last time
 				deltaTicks = (now - lastTime) / ((double)NS_PER_TICK);
@@ -481,7 +481,7 @@ public class Game {
 		 */
 		private void checkEnvironment() {
 			// check y
-			// TODO: fix hard coding
+			// TODO: account for moving screen
 			if ( mPlayer.getY() > mScreenDimensions.y - mPlayer.getHeight() - 30) {
 				mPlayer.setStatus( status.GROUND );
 				mPlayer.setVelocityY(0);
